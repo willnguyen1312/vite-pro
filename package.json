@@ -1,0 +1,13 @@
+{
+  "name": "vite-pro",
+  "private": true,
+  "scripts": {
+    "format:check": "prettier --cache --check --ignore-path .gitignore .",
+    "format:fix": "prettier --cache --write --ignore-path .gitignore ."
+  },
+  "author": "Nam Nguyen <nam.nguyen.node@gmial.com>",
+  "license": "ISC",
+  "dependencies": {
+    "prettier": "^3.0.1"
+  }
+}
