@@ -1,15 +1,15 @@
 {
-  "name": "vite-pro",
-  "private": true,
-  "scripts": {
-    "start-code": "pnpm --filter=code dev",
-    "start-react": "pnpm --filter=react dev",
-    "format:check": "prettier --cache --check --ignore-path .gitignore .",
-    "format:fix": "prettier --cache --write --ignore-path .gitignore ."
-  },
-  "author": "Nam Nguyen <nam.nguyen.node@gmial.com>",
-  "license": "ISC",
-  "dependencies": {
-    "prettier": "^3.0.1"
-  }
+    "name": "vite-pro",
+    "private": true,
+    "scripts": {
+        "start-code": "pnpm --filter=code dev",
+        "start-react": "pnpm --filter=react dev",
+        "format:check": "prettier --cache --check --ignore-path .gitignore .",
+        "format:fix": "prettier --cache --write --ignore-path .gitignore ."
+    },
+    "author": "Nam Nguyen <nam.nguyen.node@gmial.com>",
+    "license": "ISC",
+    "dependencies": {
+        "prettier": "^3.0.1"
+    }
 }
