@@ -1,0 +1,14 @@
+{
+    "name": "code",
+    "private": true,
+    "license": "MIT",
+    "scripts": {
+        "dev": "vitest",
+        "test": "vitest run"
+    },
+    "devDependencies": {
+        "@types/node": "^20.4.9",
+        "vite": "latest",
+        "vitest": "latest"
+    }
+}
