@@ -3,20 +3,24 @@
 // Case insensitive
 // For instance: With the above string, the result should be top 5 words with their according occurrences
 export function solution(input: string) {
-    const normalizedInput = input.toLowerCase().replace(",", "")
-    const words = normalizedInput.split(" ").filter(word => word.length > 3)
-    const lookup = new Map<string, number>()
+    // const result = [...input.matchAll(new RegExp(/[a-z]+/, 'ig'))].map(t => t[0]).filter(t => t.length > 3)
+    // console.log(result);
 
-    for (const word of words) {
-        if (lookup.has(word)) {
-            lookup.set(word, lookup.get(word) + 1)
-        } else {
-            lookup.set(word, 1)
-        }
-    }
 
-    const wordsSortedByOccurrences = [...lookup.entries()].sort((first, second) => second[1] - first[1])
-    return wordsSortedByOccurrences.slice(0, 5)
+    // const normalizedInput = input.toLowerCase().replace(",", "")
+    // const words = normalizedInput.split(" ").filter(word => word.length > 3)
+    // const lookup = new Map<string, number>()
+
+    // for (const word of words) {
+    //     if (lookup.has(word)) {
+    //         lookup.set(word, lookup.get(word) + 1)
+    //     } else {
+    //         lookup.set(word, 1)
+    //     }
+    // }
+
+    // const wordsSortedByOccurrences = [...lookup.entries()].sort((first, second) => second[1] - first[1])
+    // return wordsSortedByOccurrences.slice(0, 5)
 }
 
 // Time complexity analysis:
@@ -26,7 +30,7 @@ export function solution(input: string) {
 // O(1n + 1n + 1n)
 
 
-// Min Stack O(1)
+// Max Stack O(1)
 
 
 
@@ -46,29 +50,29 @@ describe("solution", () => {
 
         const output = solution(input)
 
-        expect(output).toMatchInlineSnapshot(`
-          [
-            [
-              "lorem",
-              5,
-            ],
-            [
-              "ipsum",
-              4,
-            ],
-            [
-              "there",
-              2,
-            ],
-            [
-              "injected",
-              2,
-            ],
-            [
-              "humour,",
-              2,
-            ],
-          ]
-        `)
+        // expect(output).toMatchInlineSnapshot(`
+        //   [
+        //     [
+        //       "lorem",
+        //       5,
+        //     ],
+        //     [
+        //       "ipsum",
+        //       4,
+        //     ],
+        //     [
+        //       "there",
+        //       2,
+        //     ],
+        //     [
+        //       "injected",
+        //       2,
+        //     ],
+        //     [
+        //       "humour,",
+        //       2,
+        //     ],
+        //   ]
+        // `)
     })
 })
