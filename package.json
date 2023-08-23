@@ -4,6 +4,7 @@
     "scripts": {
         "start-code": "pnpm --filter=code dev",
         "start-react": "pnpm --filter=react dev",
+        "start-vanilla": "pnpm --filter=vanilla dev",
         "format:check": "prettier --cache --check --ignore-path .gitignore .",
         "format:fix": "prettier --cache --write --ignore-path .gitignore ."
     },
