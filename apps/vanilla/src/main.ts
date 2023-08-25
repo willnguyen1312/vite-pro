@@ -1,6 +1,6 @@
-import './style.css'
+import "./style.css"
 
-document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
+document.querySelector<HTMLDivElement>("#app")!.innerHTML = `
 <div class="roomba">
   <div class="wheel wheel-left"></div>  
   <div class="wheel wheel-right"></div>
