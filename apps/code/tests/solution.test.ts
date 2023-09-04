@@ -5,12 +5,9 @@
 export function solution(input: string) {
     // const result = [...input.matchAll(new RegExp(/[a-z]+/, 'ig'))].map(t => t[0]).filter(t => t.length > 3)
     // console.log(result);
-
-
     // const normalizedInput = input.toLowerCase().replace(",", "")
     // const words = normalizedInput.split(" ").filter(word => word.length > 3)
     // const lookup = new Map<string, number>()
-
     // for (const word of words) {
     //     if (lookup.has(word)) {
     //         lookup.set(word, lookup.get(word) + 1)
@@ -18,7 +15,6 @@ export function solution(input: string) {
     //         lookup.set(word, 1)
     //     }
     // }
-
     // const wordsSortedByOccurrences = [...lookup.entries()].sort((first, second) => second[1] - first[1])
     // return wordsSortedByOccurrences.slice(0, 5)
 }
@@ -29,10 +25,7 @@ export function solution(input: string) {
 // Space complexity analysis:
 // O(1n + 1n + 1n)
 
-
 // Max Stack O(1)
-
-
 
 // Step 1 - Sample str: "Hello world hello" -> ["hello", "world", "hello"]
 // Step 2 - Lookup => const lookup = { hello: 2, world: 1 }
