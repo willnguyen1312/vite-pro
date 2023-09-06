@@ -1,9 +1,12 @@
 const solution = (values: number[], n: number, k: number) => {
-    const filteredValues = [...new Set(values)].filter((x) => { return x % k == 0 });
-    filteredValues.sort((x, y) => { return y - x });
-    return filteredValues[n - 1] || -1;
+    const filteredValues = [...new Set(values)].filter((x) => {
+        return x % k == 0
+    })
+    filteredValues.sort((x, y) => {
+        return y - x
+    })
+    return filteredValues[n - 1] || -1
 }
-
 
 describe("solution", () => {
     it("should return work", () => {
@@ -11,9 +14,7 @@ describe("solution", () => {
 
         const output = solution(input, 4, 3)
 
-
         expect(output).toEqual(6)
-
     })
 
     it("should also work", () => {
@@ -21,8 +22,6 @@ describe("solution", () => {
 
         const output = solution(input, 3, 2)
 
-
         expect(output).toEqual(4)
-
     })
 })
