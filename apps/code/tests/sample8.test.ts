@@ -61,7 +61,12 @@ export const solution = (pot: number[][]): boolean => {
         }
         visited.add(key)
 
-        return dfs(row - 1, col) || dfs(row + 1, col) || dfs(row, col - 1) || dfs(row, col + 1)
+        return (
+            dfs(row - 1, col) ||
+            dfs(row + 1, col) ||
+            dfs(row, col - 1) ||
+            dfs(row, col + 1)
+        )
     }
 
     for (let col = 0; col < numbColumn; col++) {
@@ -71,8 +76,7 @@ export const solution = (pot: number[][]): boolean => {
     }
 
     return false
-};
-
+}
 
 describe("solution", () => {
     it("should work first case", () => {
@@ -88,7 +92,7 @@ describe("solution", () => {
 
         const expected = true
         expect(output).toEqual(expected)
-    });
+    })
 
     it("should work second case", () => {
         const input = [
@@ -101,7 +105,7 @@ describe("solution", () => {
 
         const expected = false
         expect(output).toEqual(expected)
-    });
+    })
 
     it("should work third case", () => {
         const input = [
@@ -140,14 +144,20 @@ describe("solution", () => {
     })
 
     it("should work sixth case", () => {
-        const input = [[1, 1], [0, 1]]
+        const input = [
+            [1, 1],
+            [0, 1],
+        ]
         const expected = false
         const output = solution(input)
         expect(output).toEqual(expected)
     })
 
     it("should work seventh case", () => {
-        const input = [[1, 0], [0, 1]]
+        const input = [
+            [1, 0],
+            [0, 1],
+        ]
         const expected = false
         const output = solution(input)
         expect(output).toEqual(expected)
