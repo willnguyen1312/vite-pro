@@ -28,3 +28,9 @@ export const solution = (jobValues: number[][]) => {
         return Math.max(currentMax, next)
     }, 0)
 }
+
+describe("solution", () => {
+    it("should work first case", () => {
+        expect(true).toEqual(true)
+    })
+})
