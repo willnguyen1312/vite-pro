@@ -11,7 +11,7 @@
     "author": "Nam Nguyen <nam.nguyen.node@gmial.com>",
     "license": "ISC",
     "dependencies": {
-        "prettier": "^3.0.2",
-        "unocss": "^0.55.3"
+        "prettier": "^3.0.3",
+        "unocss": "^0.55.7"
     }
 }

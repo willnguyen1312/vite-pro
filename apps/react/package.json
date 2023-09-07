@@ -5,6 +5,7 @@
     "type": "module",
     "scripts": {
         "dev": "vite",
+        "test": "vitest",
         "build": "tsc && vite build",
         "preview": "vite preview"
     },
@@ -13,12 +14,18 @@
         "react-dom": "^18.2.0"
     },
     "devDependencies": {
+        "@testing-library/react": "^14.0.0",
+        "@testing-library/user-event": "^14.4.3",
+        "@types/node": "^20.5.9",
         "@types/react": "^18.2.21",
         "@types/react-dom": "^18.2.7",
-        "@unocss/reset": "^0.55.3",
+        "@unocss/reset": "^0.55.7",
         "@vitejs/plugin-react": "^4.0.4",
+        "jsdom": "^22.1.0",
         "typescript": "^5.2.2",
-        "unocss": "^0.55.3",
-        "vite": "^4.4.9"
+        "unocss": "^0.55.7",
+        "vite": "^4.4.9",
+        "vitest": "^0.34.3",
+        "vitest-dom": "^0.1.0"
     }
 }

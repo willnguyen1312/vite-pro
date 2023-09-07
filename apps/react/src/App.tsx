@@ -5,9 +5,11 @@ function App() {
     const [data, setData] = useState<number[]>([])
     return (
         <div>
-            {data.map((item) => {
-                return <p key={item}>{item}</p>
-            })}
+            <ul>
+                {data.map((item) => {
+                    return <li key={item}>{item}</li>
+                })}
+            </ul>
 
             <button
                 onClick={() => {

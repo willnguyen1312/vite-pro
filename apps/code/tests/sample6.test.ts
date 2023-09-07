@@ -1,32 +1,32 @@
 export const solution = (numbers: number[]) => {
-    let largestSum = 0;
+    let largestSum = 0
     while (numbers.length > 0) {
         let previousNumber = numbers.shift()
         if (previousNumber < 0) {
-            return -1;
+            return -1
         }
 
-        let sum = previousNumber;
+        let sum = previousNumber
 
         while (numbers.length) {
             let currentNumber = numbers.shift()
             if (currentNumber < 0) {
-                return -1;
+                return -1
             }
 
             if (currentNumber === previousNumber - 1) {
-                sum += currentNumber;
-                previousNumber = currentNumber;
+                sum += currentNumber
+                previousNumber = currentNumber
             } else {
-                numbers.unshift(currentNumber);
-                break;
+                numbers.unshift(currentNumber)
+                break
             }
         }
 
-        largestSum = Math.max(largestSum, sum);
+        largestSum = Math.max(largestSum, sum)
     }
 
-    return largestSum;
+    return largestSum
 }
 
 // Given an array of numbers, find the largest sum of consecutive decreasing positive integers.

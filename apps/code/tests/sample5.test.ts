@@ -37,7 +37,6 @@ export function alternative(n: number) {
     return recurse(n)
 }
 
-
 // You are at the bottom of a staircase with n stairs.
 // You can jump 1, 2, or 3 stairs at a time. How many different ways can you jump up the stairs?
 

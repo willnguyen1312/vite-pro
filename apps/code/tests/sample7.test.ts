@@ -1,34 +1,33 @@
-var cache = {};
-var calculationsPerformed = 0;
+var cache = {}
+var calculationsPerformed = 0
 
 export function factorial(value) {
     if (value <= 1) {
         return value
     }
 
-    const cached = cache[value];
+    const cached = cache[value]
     if (cached) {
-        return cached;
+        return cached
     }
 
-    const result = value * factorial(value - 1);
-    cache[value] = result;
-    calculationsPerformed++;
-    return result;
-};
-
-export const solution7 = (numbersToCalculate) => {
-    const results = [];
-    for (const value of numbersToCalculate) {
-        const result = factorial(value);
-        results.push([result, calculationsPerformed]);
-        calculationsPerformed = 0;
-    }
-
-    cache = {};
-    return results;
+    const result = value * factorial(value - 1)
+    cache[value] = result
+    calculationsPerformed++
+    return result
 }
 
+export const solution7 = (numbersToCalculate) => {
+    const results = []
+    for (const value of numbersToCalculate) {
+        const result = factorial(value)
+        results.push([result, calculationsPerformed])
+        calculationsPerformed = 0
+    }
+
+    cache = {}
+    return results
+}
 
 // Given a series of numbers, calculate the factorial of each one.
 
@@ -50,7 +49,11 @@ describe("solution7", () => {
 
         const output = solution7(input)
 
-        const expected = [[120, 4], [720, 1], [6, 0]]
+        const expected = [
+            [120, 4],
+            [720, 1],
+            [6, 0],
+        ]
 
         expect(output).toEqual(expected)
     })
