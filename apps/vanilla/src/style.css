@@ -1,30 +1,32 @@
-.roomba {
+.axis {
+    --c: 10;
+    --cx: 5;
+    --cy: 5;
+    --size: 350px;
     position: relative;
-}
+    width: var(--size);
+    height: var(--size);
 
-.wheel {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background: black;
-    position: absolute;
-    bottom: 10px;
-}
-
-.wheel-left {
-    left: 10px;
-}
-
-.wheel-right {
-    right: 10px;
-}
-
-.grid {
-    display: grid;
-    grid-template-columns: repeat(10, 1fr);
-    grid-template-rows: repeat(10, 1fr);
-}
-
-.cell {
-    border: 1px solid gray;
+    background-image: linear-gradient(
+            #0000 calc(var(--cy) * 100% / var(--c) - 1px),
+            #0008 0 calc(var(--cy) * 100% / var(--c) + 1px),
+            transparent 0
+        ),
+        linear-gradient(
+            to right,
+            #0000 calc(var(--cx) * 100% / var(--c) - 1px),
+            #0008 0 calc(var(--cx) * 100% / var(--c) + 1px),
+            transparent 0
+        ),
+        repeating-linear-gradient(
+            #0002 0 0.5px,
+            #0000 0 calc(100% / var(--c) - 0.5px),
+            #0002 0 calc(100% / var(--c))
+        ),
+        repeating-linear-gradient(
+            to right,
+            #0002 0 0.5px,
+            #0000 0 calc(100% / var(--c) - 0.5px),
+            #0002 0 calc(100% / var(--c))
+        );
 }
