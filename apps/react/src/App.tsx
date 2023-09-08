@@ -6,21 +6,19 @@ function App() {
     return (
         <div>
             <ul>
-                {data.map((item) => {
-                    return <li key={item}>{item}</li>
+                {data.map((item, index) => {
+                    return <li key={index}>{item}</li>
                 })}
             </ul>
 
             <button
                 onClick={() => {
                     setData((prev) => {
-                        if (prev.length < 4) {
+                        if (prev.length < 3) {
                             return [...prev, prev.length + 1]
                         }
 
-                        const newData = [...prev]
-                        newData.pop()
-
+                        const newData = [...prev].reverse()
                         return newData
                     })
                 }}
