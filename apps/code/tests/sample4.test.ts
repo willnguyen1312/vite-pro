@@ -1,42 +1,42 @@
 export const solution = (prices: number[], trades: number[][]) => {
-    const sharesHeld: {
-        price: number
-        shares: number
-    }[] = []
-    let profit = 0
+  const sharesHeld: {
+    price: number;
+    shares: number;
+  }[] = [];
+  let profit = 0;
 
-    for (const trade of trades) {
-        const isPurchase = trade[1] > 0
-        let shares = trade[1]
-        const price = prices[trade[0]]
+  for (const trade of trades) {
+    const isPurchase = trade[1] > 0;
+    let shares = trade[1];
+    const price = prices[trade[0]];
 
-        if (isPurchase) {
-            sharesHeld.push({
-                price,
-                shares: shares,
-            })
-            continue
-        }
-
-        let normalizedShares = Math.abs(shares)
-
-        for (let i = 0; i < sharesHeld.length; i++) {
-            const item = sharesHeld[i]
-
-            if (item.shares > normalizedShares) {
-                item.shares -= normalizedShares
-                profit = profit + (price - item.price) * normalizedShares
-                break
-            }
-
-            normalizedShares -= item.shares
-            profit = profit + (price - item.price) * item.shares
-            item.shares = 0
-        }
+    if (isPurchase) {
+      sharesHeld.push({
+        price,
+        shares: shares,
+      });
+      continue;
     }
 
-    return profit
-}
+    let normalizedShares = Math.abs(shares);
+
+    for (let i = 0; i < sharesHeld.length; i++) {
+      const item = sharesHeld[i];
+
+      if (item.shares > normalizedShares) {
+        item.shares -= normalizedShares;
+        profit = profit + (price - item.price) * normalizedShares;
+        break;
+      }
+
+      normalizedShares -= item.shares;
+      profit = profit + (price - item.price) * item.shares;
+      item.shares = 0;
+    }
+  }
+
+  return profit;
+};
 
 // We've provided a program that was designed to accomplish the following task, but doesn't work properly (as indicated by failing tests). Your task is to fix the bugs in this program so the tests pass.
 
@@ -57,17 +57,17 @@ export const solution = (prices: number[], trades: number[][]) => {
 // Result: 30 ($1 profit * 5 shares, $1 profit * 10 shares, $3 profit * 5 shares)
 
 describe("solution", () => {
-    it("should work", () => {
-        expect(
-            solution(
-                [1, 2, 3, 4],
-                [
-                    [0, 10],
-                    [1, -5],
-                    [2, 10],
-                    [3, -15],
-                ],
-            ),
-        ).toEqual(30)
-    })
-})
+  it("should work", () => {
+    expect(
+      solution(
+        [1, 2, 3, 4],
+        [
+          [0, 10],
+          [1, -5],
+          [2, 10],
+          [3, -15],
+        ],
+      ),
+    ).toEqual(30);
+  });
+});

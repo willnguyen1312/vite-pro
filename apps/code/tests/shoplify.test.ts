@@ -64,14 +64,14 @@
 // Final step: Return the first item in filtered store - O(1)
 
 function recommend(store: [string, number][], basket: string[]): string {
-    // First step - O(n log n)
-    const sortedStore = store.sort((a, b) => b[1] - a[1])
+  // First step - O(n log n)
+  const sortedStore = store.sort((a, b) => b[1] - a[1]);
 
-    // Second step
-    const basketSet = new Set(basket)
-    const filteredStore = sortedStore.filter((item) => !basketSet.has(item[0]))
+  // Second step
+  const basketSet = new Set(basket);
+  const filteredStore = sortedStore.filter((item) => !basketSet.has(item[0]));
 
-    return filteredStore.length ? filteredStore[0][0] : ""
+  return filteredStore.length ? filteredStore[0][0] : "";
 }
 
 // Max heap solution - O(log n)
@@ -80,71 +80,71 @@ function recommend(store: [string, number][], basket: string[]): string {
 // Peek - O(1)
 
 describe("recommend", () => {
-    it("first case", () => {
-        expect(
-            recommend(
-                [
-                    ["pencil", 20],
-                    ["paper", 30],
-                    ["envelope", 10],
-                ],
-                ["paper", "pencil"],
-            ),
-        ).toEqual("envelope")
-    })
+  it("first case", () => {
+    expect(
+      recommend(
+        [
+          ["pencil", 20],
+          ["paper", 30],
+          ["envelope", 10],
+        ],
+        ["paper", "pencil"],
+      ),
+    ).toEqual("envelope");
+  });
 
-    it("second case", () => {
-        expect(recommend([["paper", 10]], [])).toEqual("paper")
-    })
+  it("second case", () => {
+    expect(recommend([["paper", 10]], [])).toEqual("paper");
+  });
 
-    it("third case", () => {
-        expect(
-            recommend(
-                [
-                    ["paper", 10],
-                    ["pencil", 5],
-                ],
-                ["paper"],
-            ),
-        ).toEqual("pencil")
-    })
+  it("third case", () => {
+    expect(
+      recommend(
+        [
+          ["paper", 10],
+          ["pencil", 5],
+        ],
+        ["paper"],
+      ),
+    ).toEqual("pencil");
+  });
 
-    it("fourth case", () => {
-        expect(
-            recommend(
-                [
-                    ["envelope", 1],
-                    ["pencil", 10],
-                    ["paper", 5],
-                ],
-                ["pencil", "paper"],
-            ),
-        ).toEqual("envelope")
-    })
+  it("fourth case", () => {
+    expect(
+      recommend(
+        [
+          ["envelope", 1],
+          ["pencil", 10],
+          ["paper", 5],
+        ],
+        ["pencil", "paper"],
+      ),
+    ).toEqual("envelope");
+  });
 
-    it("fifth case", () => {
-        const store = [
-            ["envelope", 1],
-            ["pencil", 10],
-            ["paper", 5],
-        ] as [string, number][]
-        const currentBasket = ["pencil"]
-        const output = recommend(store, currentBasket)
-        const expected = "paper"
-        expect(output).toEqual(expected)
-    })
+  it("fifth case", () => {
+    const store = [
+      ["envelope", 1],
+      ["pencil", 10],
+      ["paper", 5],
+    ] as [string, number][];
+    const currentBasket = ["pencil"];
+    const output = recommend(store, currentBasket);
+    const expected = "paper";
+    expect(output).toEqual(expected);
+  });
 
-    it("sixth case", () => {
-        const store = [
-            ["envelope", 1],
-            ["pencil", 10],
-            ["paper", 5],
-            ["axe", 5],
-        ] as [string, number][]
-        const currentBasket = ["pencil"]
-        const output = recommend(store, currentBasket)
-        const expected = "paper"
+  it("sixth case", () => {
+    const store = [
+      ["envelope", 1],
+      ["pencil", 10],
+      ["paper", 5],
+      ["axe", 5],
+    ] as [string, number][];
+    const currentBasket = ["pencil"];
+    const output = recommend(store, currentBasket);
+    const expected = "paper";
 
-        expect(output).toEqual(expected)
-    })
-})
+    expect(output).toEqual(expected);
+  });
+});

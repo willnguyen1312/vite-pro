@@ -1,32 +1,32 @@
 .axis {
-    --c: 10;
-    --cx: 5;
-    --cy: 5;
-    --size: 350px;
-    position: relative;
-    width: var(--size);
-    height: var(--size);
+  --c: 10;
+  --cx: 5;
+  --cy: 5;
+  --size: 350px;
+  position: relative;
+  width: var(--size);
+  height: var(--size);
 
-    background-image: linear-gradient(
-            #0000 calc(var(--cy) * 100% / var(--c) - 1px),
-            #0008 0 calc(var(--cy) * 100% / var(--c) + 1px),
-            transparent 0
-        ),
-        linear-gradient(
-            to right,
-            #0000 calc(var(--cx) * 100% / var(--c) - 1px),
-            #0008 0 calc(var(--cx) * 100% / var(--c) + 1px),
-            transparent 0
-        ),
-        repeating-linear-gradient(
-            #0002 0 0.5px,
-            #0000 0 calc(100% / var(--c) - 0.5px),
-            #0002 0 calc(100% / var(--c))
-        ),
-        repeating-linear-gradient(
-            to right,
-            #0002 0 0.5px,
-            #0000 0 calc(100% / var(--c) - 0.5px),
-            #0002 0 calc(100% / var(--c))
-        );
+  background-image: linear-gradient(
+      #0000 calc(var(--cy) * 100% / var(--c) - 1px),
+      #0008 0 calc(var(--cy) * 100% / var(--c) + 1px),
+      transparent 0
+    ),
+    linear-gradient(
+      to right,
+      #0000 calc(var(--cx) * 100% / var(--c) - 1px),
+      #0008 0 calc(var(--cx) * 100% / var(--c) + 1px),
+      transparent 0
+    ),
+    repeating-linear-gradient(
+      #0002 0 0.5px,
+      #0000 0 calc(100% / var(--c) - 0.5px),
+      #0002 0 calc(100% / var(--c))
+    ),
+    repeating-linear-gradient(
+      to right,
+      #0002 0 0.5px,
+      #0000 0 calc(100% / var(--c) - 0.5px),
+      #0002 0 calc(100% / var(--c))
+    );
 }

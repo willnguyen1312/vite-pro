@@ -1,12 +1,12 @@
 {
-    "$schema": "https://json.schemastore.org/tsconfig",
-    "display": "Default",
-    "compilerOptions": {
-        "strict": false,
-        "types": ["vitest/importMeta", "vitest/globals", "node"],
-        "target": "ESNext",
-        "moduleResolution": "Bundler"
-    },
-    "exclude": ["node_modules"],
-    "include": ["tests", "vite.config.ts"]
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "display": "Default",
+  "compilerOptions": {
+    "strict": false,
+    "types": ["vitest/importMeta", "vitest/globals", "node"],
+    "target": "ESNext",
+    "moduleResolution": "Bundler"
+  },
+  "exclude": ["node_modules"],
+  "include": ["tests", "vite.config.ts"]
 }

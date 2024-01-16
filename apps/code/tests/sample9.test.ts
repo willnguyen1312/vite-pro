@@ -89,110 +89,110 @@
 // };
 
 export const solution = (
-    maze: number[][],
-    startRow: number,
-    startCol: number,
-    destRow: number,
-    destCol: number,
+  maze: number[][],
+  startRow: number,
+  startCol: number,
+  destRow: number,
+  destCol: number,
 ) => {
-    const numbRow = maze.length
-    const numbColumn = maze[0].length
-    const visited = new Set()
+  const numbRow = maze.length;
+  const numbColumn = maze[0].length;
+  const visited = new Set();
 
-    const dfs = (row, col) => {
-        if (row < 0 || row >= numbRow || col < 0 || col >= numbColumn) {
-            return false
-        }
-
-        if (maze[row][col] === 1) {
-            return false
-        }
-
-        if (row === destRow && col === destCol) {
-            return true
-        }
-
-        const key = `${row}-${col}`
-        if (visited.has(key)) {
-            return false
-        }
-        visited.add(key)
-
-        return (
-            dfs(row - 1, col) ||
-            dfs(row + 1, col) ||
-            dfs(row, col - 1) ||
-            dfs(row, col + 1)
-        )
+  const dfs = (row, col) => {
+    if (row < 0 || row >= numbRow || col < 0 || col >= numbColumn) {
+      return false;
     }
 
-    return dfs(startRow, startCol)
-}
+    if (maze[row][col] === 1) {
+      return false;
+    }
+
+    if (row === destRow && col === destCol) {
+      return true;
+    }
+
+    const key = `${row}-${col}`;
+    if (visited.has(key)) {
+      return false;
+    }
+    visited.add(key);
+
+    return (
+      dfs(row - 1, col) ||
+      dfs(row + 1, col) ||
+      dfs(row, col - 1) ||
+      dfs(row, col + 1)
+    );
+  };
+
+  return dfs(startRow, startCol);
+};
 
 describe("solution", () => {
-    it("should work first case", () => {
-        expect(
-            solution(
-                [
-                    [0, 1],
-                    [1, 0],
-                ],
-                0,
-                0,
-                1,
-                1,
-            ),
-        ).toEqual(false)
-    })
+  it("should work first case", () => {
+    expect(
+      solution(
+        [
+          [0, 1],
+          [1, 0],
+        ],
+        0,
+        0,
+        1,
+        1,
+      ),
+    ).toEqual(false);
+  });
 
-    it("should work second case", () => {
-        expect(
-            solution(
-                [
-                    [0, 0],
-                    [1, 0],
-                ],
-                0,
-                0,
-                1,
-                1,
-            ),
-        ).toEqual(true)
-    })
+  it("should work second case", () => {
+    expect(
+      solution(
+        [
+          [0, 0],
+          [1, 0],
+        ],
+        0,
+        0,
+        1,
+        1,
+      ),
+    ).toEqual(true);
+  });
 
-    it("should work third case", () => {
-        expect(
-            solution(
-                [
-                    [1, 0, 0, 1, 1],
-                    [1, 1, 0, 1, 1],
-                    [1, 0, 0, 1, 1],
-                    [1, 0, 1, 1, 0],
-                    [1, 0, 0, 0, 0],
-                ],
-                0,
-                1,
-                3,
-                4,
-            ),
-        ).toEqual(true)
-    })
+  it("should work third case", () => {
+    expect(
+      solution(
+        [
+          [1, 0, 0, 1, 1],
+          [1, 1, 0, 1, 1],
+          [1, 0, 0, 1, 1],
+          [1, 0, 1, 1, 0],
+          [1, 0, 0, 0, 0],
+        ],
+        0,
+        1,
+        3,
+        4,
+      ),
+    ).toEqual(true);
+  });
 
-    it("should work fourth case", () => {
-        expect(
-            solution(
-                [
-                    [1, 0, 0, 1, 1],
-                    [1, 1, 0, 1, 1],
-                    [1, 0, 0, 1, 1],
-                    [1, 0, 1, 1, 0],
-                    [1, 0, 0, 0, 1],
-                ],
-                0,
-                1,
-                3,
-                4,
-            ),
-        ).toEqual(false)
-    })
-})
+  it("should work fourth case", () => {
+    expect(
+      solution(
+        [
+          [1, 0, 0, 1, 1],
+          [1, 1, 0, 1, 1],
+          [1, 0, 0, 1, 1],
+          [1, 0, 1, 1, 0],
+          [1, 0, 0, 0, 1],
+        ],
+        0,
+        1,
+        3,
+        4,
+      ),
+    ).toEqual(false);
+  });
+});

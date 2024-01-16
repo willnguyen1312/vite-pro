@@ -19,11 +19,11 @@ highlights!
 
 You need to craft your answers around the following:
 
--   Impact
--   Readiness
--   Trust
--   Engagement
--   Self-awareness
+- Impact
+- Readiness
+- Trust
+- Engagement
+- Self-awareness
 
 Things went quiet for a bit after the two interviews and I only heard back after
 2 weeks from the same HR that they will move ahead with the on-site.

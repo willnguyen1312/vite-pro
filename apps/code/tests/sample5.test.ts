@@ -1,40 +1,40 @@
 export const solution5 = (n: number) => {
-    const memo = Array(n + 1).fill(0)
-    memo[0] = 1
-    memo[1] = 1
-    memo[2] = 2
+  const memo = Array(n + 1).fill(0);
+  memo[0] = 1;
+  memo[1] = 1;
+  memo[2] = 2;
 
-    for (let i = 3; i <= n; i++) {
-        memo[i] = memo[i - 1] + memo[i - 2] + memo[i - 3]
-    }
+  for (let i = 3; i <= n; i++) {
+    memo[i] = memo[i - 1] + memo[i - 2] + memo[i - 3];
+  }
 
-    return memo[n]
-}
+  return memo[n];
+};
 
 export function alternative(n: number) {
-    const memo = new Map<number, number>()
+  const memo = new Map<number, number>();
 
-    const recurse = (n: number): number => {
-        if (n < 0) {
-            return 0
-        }
-
-        if (n === 0) {
-            return 1
-        }
-
-        if (memo.has(n)) {
-            return memo.get(n)!
-        }
-
-        const result = recurse(n - 1) + recurse(n - 2) + recurse(n - 3)
-
-        memo.set(n, result)
-
-        return result
+  const recurse = (n: number): number => {
+    if (n < 0) {
+      return 0;
     }
 
-    return recurse(n)
+    if (n === 0) {
+      return 1;
+    }
+
+    if (memo.has(n)) {
+      return memo.get(n)!;
+    }
+
+    const result = recurse(n - 1) + recurse(n - 2) + recurse(n - 3);
+
+    memo.set(n, result);
+
+    return result;
+  };
+
+  return recurse(n);
 }
 
 // You are at the bottom of a staircase with n stairs.
@@ -55,13 +55,13 @@ export function alternative(n: number) {
 // jump 3 stairs at once
 
 describe("solution5", () => {
-    it("should work", () => {
-        const input = 3
+  it("should work", () => {
+    const input = 3;
 
-        const output = solution5(input)
+    const output = solution5(input);
 
-        const expected = 4
+    const expected = 4;
 
-        expect(output).toEqual(expected)
-    })
-})
+    expect(output).toEqual(expected);
+  });
+});

@@ -38,128 +38,128 @@
 // Explanation: The top row has no gaps.
 
 export const solution = (pot: number[][]): boolean => {
-    const numbRow = pot.length
-    const numbColumn = pot[0].length
-    const visited = new Set()
+  const numbRow = pot.length;
+  const numbColumn = pot[0].length;
+  const visited = new Set();
 
-    const dfs = (row, col) => {
-        if (row < 0 || row >= numbRow || col < 0 || col >= numbColumn) {
-            return false
-        }
-
-        if (pot[row][col] === 1) {
-            return false
-        }
-
-        if (row === numbRow - 1 && col === numbColumn - 1) {
-            return true
-        }
-
-        const key = `${row}-${col}`
-        if (visited.has(key)) {
-            return false
-        }
-        visited.add(key)
-
-        return (
-            dfs(row - 1, col) ||
-            dfs(row + 1, col) ||
-            dfs(row, col - 1) ||
-            dfs(row, col + 1)
-        )
+  const dfs = (row, col) => {
+    if (row < 0 || row >= numbRow || col < 0 || col >= numbColumn) {
+      return false;
     }
 
-    for (let col = 0; col < numbColumn; col++) {
-        if (dfs(0, col)) {
-            return true
-        }
+    if (pot[row][col] === 1) {
+      return false;
     }
 
-    return false
-}
+    if (row === numbRow - 1 && col === numbColumn - 1) {
+      return true;
+    }
+
+    const key = `${row}-${col}`;
+    if (visited.has(key)) {
+      return false;
+    }
+    visited.add(key);
+
+    return (
+      dfs(row - 1, col) ||
+      dfs(row + 1, col) ||
+      dfs(row, col - 1) ||
+      dfs(row, col + 1)
+    );
+  };
+
+  for (let col = 0; col < numbColumn; col++) {
+    if (dfs(0, col)) {
+      return true;
+    }
+  }
+
+  return false;
+};
 
 describe("solution", () => {
-    it("should work first case", () => {
-        const input = [
-            [0, 1, 1, 1, 1],
-            [0, 1, 0, 0, 0],
-            [0, 0, 0, 1, 0],
-            [1, 1, 1, 1, 0],
-            [1, 0, 0, 1, 0],
-        ]
+  it("should work first case", () => {
+    const input = [
+      [0, 1, 1, 1, 1],
+      [0, 1, 0, 0, 0],
+      [0, 0, 0, 1, 0],
+      [1, 1, 1, 1, 0],
+      [1, 0, 0, 1, 0],
+    ];
 
-        const output = solution(input)
+    const output = solution(input);
 
-        const expected = true
-        expect(output).toEqual(expected)
-    })
+    const expected = true;
+    expect(output).toEqual(expected);
+  });
 
-    it("should work second case", () => {
-        const input = [
-            [1, 1, 1],
-            [1, 1, 0],
-            [1, 0, 0],
-        ]
+  it("should work second case", () => {
+    const input = [
+      [1, 1, 1],
+      [1, 1, 0],
+      [1, 0, 0],
+    ];
 
-        const output = solution(input)
+    const output = solution(input);
 
-        const expected = false
-        expect(output).toEqual(expected)
-    })
+    const expected = false;
+    expect(output).toEqual(expected);
+  });
 
-    it("should work third case", () => {
-        const input = [
-            [1, 1, 1],
-            [1, 1, 0],
-            [1, 0, 0],
-        ]
+  it("should work third case", () => {
+    const input = [
+      [1, 1, 1],
+      [1, 1, 0],
+      [1, 0, 0],
+    ];
 
-        const output = solution(input)
+    const output = solution(input);
 
-        const expected = false
-        expect(output).toEqual(expected)
-    })
+    const expected = false;
+    expect(output).toEqual(expected);
+  });
 
-    it("should work fourth case", () => {
-        const input = [
-            [0, 1, 1, 1, 1],
-            [0, 1, 0, 0, 0],
-            [0, 0, 0, 1, 0],
-            [1, 1, 1, 1, 0],
-            [1, 0, 0, 1, 1],
-        ]
+  it("should work fourth case", () => {
+    const input = [
+      [0, 1, 1, 1, 1],
+      [0, 1, 0, 0, 0],
+      [0, 0, 0, 1, 0],
+      [1, 1, 1, 1, 0],
+      [1, 0, 0, 1, 1],
+    ];
 
-        const output = solution(input)
+    const output = solution(input);
 
-        const expected = false
-        expect(output).toEqual(expected)
-    })
+    const expected = false;
+    expect(output).toEqual(expected);
+  });
 
-    it("should work fifth case", () => {
-        const input = [[1]]
-        const expected = false
+  it("should work fifth case", () => {
+    const input = [[1]];
+    const expected = false;
 
-        const output = solution(input)
-        expect(output).toEqual(expected)
-    })
+    const output = solution(input);
+    expect(output).toEqual(expected);
+  });
 
-    it("should work sixth case", () => {
-        const input = [
-            [1, 1],
-            [0, 1],
-        ]
-        const expected = false
-        const output = solution(input)
-        expect(output).toEqual(expected)
-    })
+  it("should work sixth case", () => {
+    const input = [
+      [1, 1],
+      [0, 1],
+    ];
+    const expected = false;
+    const output = solution(input);
+    expect(output).toEqual(expected);
+  });
 
-    it("should work seventh case", () => {
-        const input = [
-            [1, 0],
-            [0, 1],
-        ]
-        const expected = false
-        const output = solution(input)
-        expect(output).toEqual(expected)
-    })
-})
+  it("should work seventh case", () => {
+    const input = [
+      [1, 0],
+      [0, 1],
+    ];
+    const expected = false;
+    const output = solution(input);
+    expect(output).toEqual(expected);
+  });
+});
